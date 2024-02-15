@@ -1,10 +1,10 @@
-import { Roboto } from "next/font/google";
+import { Urbanist } from "next/font/google";
 import { Rubik } from "next/font/google";
 import "./globals.css";
 
 const rubik = Rubik({ subsets: ["latin"],
                       weight: '700'})
-const roboto = Roboto({ subsets: ["latin"],
+const urbanist = Urbanist({ subsets: ["latin"],
                         weight: ['100', '300', '400', '500', '700', '900'] });
 
 export const metadata = {
@@ -15,7 +15,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={`${roboto.className} ${rubik.className} bg-white`}>{children}</body>
+      <body className={`${urbanist.className} ${rubik.className} bg-white text-black`}>{children}</body>
     </html>
   );
 }
