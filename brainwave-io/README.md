@@ -1,36 +1,39 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Umbrl Frontend Development Task
 
-## Getting Started
+For this project, I utilized the Figma screen design provided for desktop, dividing each section into components within the "section" folder (`src/app/section`) to be displayed on the index page (`page.js`).
 
-First, run the development server:
+In the layout document, I modified the global fonts using Urbanist as a close match to the Gilroy font using lighter weight fonts and tracking changes. This was a suitable alternative as it is included in the `next/font` library.
 
-```bash
+
+## Overview
+
+This document provides instructions for setting up and running the Umbrl Frontend Development Task.
+
+## Setup Instructions
+
+1. **Clone Repository**: Clone this directory by opening the terminal on your computer:
+git clone [repository_url]
+
+
+2. **Navigate to Directory**: Move into the cloned directory:
+cd umbri-task/brainwave.io
+
+
+3. **Install Dependencies**: Install the required dependencies:
+npm install
+
+
+
+## Running the Project
+
+To run the project, you have two options:
+
+### Development Mode
+
+Start the development server:
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Production Build
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+Build the project for production:
+npm run build
