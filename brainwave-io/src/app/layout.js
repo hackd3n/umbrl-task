@@ -15,7 +15,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={`${urbanist.className} ${rubik.className} bg-white text-black`}>{children}</body>
+      <body className={`${urbanist.className} ${rubik.className} bg-white text-black scroll-smooth`}>{children}</body>
     </html>
   );
 }
