@@ -1,5 +1,6 @@
-import Header from "./components/Header";
-import Hero from "./components/Hero";
+import Header from "./sections/Header";
+import Hero from "./sections/Hero";
+import Pricing from "./sections/Pricing";
 
 export default function Home() {
   return (
@@ -7,6 +8,7 @@ export default function Home() {
       <div className="px-40">
         <Header />
         <Hero />
+        <Pricing />
       </div>
 
 
