@@ -1,24 +1,15 @@
-import React, { useMemo } from "react";
 
-const calculateYearlyPrice = (monthlyPrice) => {
-    const discount = 25;
-    const monthlyPriceNumber = parseFloat(monthlyPrice);
-    const yearlyPrice = monthlyPriceNumber * 12 * (1 - discount / 100);
-    return yearlyPrice;
-};
-
-const Card = React.memo(({ option, priceChange }) => {
+const Card = (({ option, priceChange, calculateYearlyPrice, discount }) => {
     return (
         <div className="border border-grey-100 flex flex-col h-full w-1/3 rounded-md bg-opacity-20 px-12 py-10 space-y-6">
             <h3 className="uppercase text-blue text-sm">{option.title}</h3>
             <div className="space-y-2">
                 <div className="">
-                    <span className="text-6xl"><span className="text-sm">$</span>{!priceChange ? option.monthlyPrice : calculateYearlyPrice(option.monthlyPrice)}</span>
+                    <span className="text-6xl"><span className="text-sm">$</span>{!priceChange ? option.monthlyPrice : calculateYearlyPrice(option.monthlyPrice, discount)}</span>
                     <span className="font-medium">/ {!priceChange ? 'month' : 'year'}</span>
                 </div>
                 <p className="font-thin tracking-wide text-sm">billed {!priceChange ? 'monthly' : 'annually'}</p>
             </div>
-
             <ul className="space-y-4">
                 {option.features.map((feature, index) => (
                     <li key={`${option.title}_${index}`} className="flex space-x-2">
@@ -52,19 +43,26 @@ const Card = React.memo(({ option, priceChange }) => {
     );
 });
 
-export default function PriceCards({ content, priceChange }) {
+const PriceCards = ({ content, priceChange, discount }) => {
+    const calculateYearlyPrice = (monthlyPrice, discount) => {
+        const monthlyPriceNumber = parseFloat(monthlyPrice);
+        const yearlyPrice = monthlyPriceNumber * 12 * (1 - discount / 100);
+        return yearlyPrice.toFixed(0);
+    };
 
     return (
         <>
-            {content.map((option, index) => {
-                return (
-                    <Card
-                        key={`${option.title}_${index}`}
-                        option={option}
-                        priceChange={priceChange}
-                    />
-                );
-            })}
+            {content.map((option, index) => (
+                <Card
+                    key={`${option.title}_${index}`}
+                    option={option}
+                    priceChange={priceChange}
+                    calculateYearlyPrice={calculateYearlyPrice}
+                    discount={discount}
+                />
+            ))}
         </>
     );
-}
+};
+
+export default PriceCards;
