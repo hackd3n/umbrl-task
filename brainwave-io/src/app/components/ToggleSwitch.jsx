@@ -13,7 +13,7 @@ export default function ToggleSwitch({ onChange }) {
     return (
         <div className="flex items-center p-2 space-x-2 text-base font-light">
             <label>Monthly</label>
-            <label className="relative  w-14 flex h-6">
+            <label htmlFor="monthly-plan-toggle" className="relative  w-14 flex h-6">
                 <input
                     type="checkbox"
                     id="monthly-plan-toggle"
