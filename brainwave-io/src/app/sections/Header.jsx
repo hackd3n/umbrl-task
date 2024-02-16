@@ -28,8 +28,8 @@ export default function Header() {
 
             <nav className="items-end flex h-full text-base  text-black font-medium">
                 <ul className="flex justify-between w-full items-end space-x-6 border-r border-black px-2">
-                    {navItems.map(item =>(
-                                     <li className="flex w-full text-center">
+                    {navItems.map((item,index) =>(
+                                     <li key={`navigation_item_${index}`} className="flex w-full text-center">
                                      <a className=" w-full px-2">
                                          {item.title}
                                      </a>
